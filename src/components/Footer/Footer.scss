@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+@import '../../styles/breakpoints';
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,500&display=swap');
+
+footer {
+	background-color: $lead;
+	padding: 2rem 1rem;
+
+	.footer-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		@include breakpoint(sm) {
+			align-items: flex-start;
+			padding: 2rem 1rem;
+		}
+		.links {
+			padding: 2rem 0;
+			display: flex;
+			gap: 1rem;
+			font-weight: 600;
+			@include breakpoint(sm) {
+				flex-direction: column;
+				// align-items: center;
+			}
+			.site-link {
+				&:hover {
+					text-decoration: underline;
+					text-decoration-thickness: 2px;
+					text-decoration-color: $honey;
+				}
+			}
+		}
+		.copyright {
+			font-family: 'Bitter', serif;
+			font-size: 14px;
+			padding-bottom: 2rem;
+			font-style: italic;
+		}
+		.scroll-to-top {
+			padding: 0;
+			&:hover {
+				text-decoration: underline;
+				text-decoration-thickness: 2px;
+				text-decoration-color: $honey;
+			}
+			cursor: pointer;
+		}
+	}
+}

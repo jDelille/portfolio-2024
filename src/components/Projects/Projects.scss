@@ -1,0 +1,147 @@
+@import '../../styles/breakpoints';
+@import '../../styles/variables';
+
+.projects {
+	width: 100%;
+	max-width: 736px;
+	min-width: 736px;
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	position: relative;
+	height: fit-content;
+	transition: all 200ms ease-in-out;
+	top: 80px;
+	@include breakpoint(md) {
+		min-width: 536px;
+		max-width: 536px;
+		padding: 16px;
+		overflow-x: hidden;
+		margin-top: 0;
+		top: 0;
+	}
+	@include breakpoint(sm) {
+		max-width: 100%;
+		margin: unset;
+		padding: 0;
+		min-width: 100%;
+	}
+	.overlay {
+		background-color: rgb(15, 15, 15);
+		opacity: 0.4;
+		position: absolute;
+		height: 100%;
+		width: 648px;
+		left: 0;
+		top: 0;
+		right: 0;
+		transition: all 200ms ease-in-out;
+
+		@include breakpoint(sm) {
+			max-width: 100%;
+			min-width: 100%;
+		}
+	}
+	.project {
+		background-color: $lead;
+		height: 216px;
+		width: 648px;
+		margin-right: auto;
+		padding: 16px 32px;
+		display: flex;
+		transition: all 200ms ease-in-out;
+		position: relative;
+		align-items: center;
+		cursor: pointer;
+		&:hover {
+			transform: scale(1.07) !important;
+			transition: all 200ms ease-in-out;
+			box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+			z-index: 9999;
+		}
+
+		@include breakpoint(md) {
+			max-width: 536px;
+
+			padding: 1rem;
+		}
+		@include breakpoint(sm) {
+			max-width: 100%;
+			min-width: 100%;
+			height: fit-content;
+			padding: 16px;
+			&:hover {
+				transform: none !important;
+			}
+		}
+		.project-content {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			justify-content: center;
+			position: relative;
+			max-width: 536px;
+
+			.project-build {
+				font-size: 12px;
+				text-transform: uppercase;
+				font-weight: 600;
+				letter-spacing: 1px;
+				@include breakpoint(md) {
+					max-width: 100%;
+				}
+				@include breakpoint(sm) {
+					font-size: 0.75em;
+				}
+			}
+			.project-name {
+				font-weight: 500;
+				@include breakpoint(md) {
+					max-width: 100%;
+				}
+				@include breakpoint(sm) {
+					font-size: 23px;
+				}
+			}
+			.project-description {
+				color: $gray;
+				font-size: 16px;
+				background-color: transparent;
+				@include breakpoint(md) {
+					padding: 0;
+				}
+				@include breakpoint(sm) {
+					width: 100%;
+					padding: 0;
+				}
+			}
+			.project-links {
+				display: flex;
+				gap: 1rem;
+				align-items: center;
+				// margin-top: 1rem;
+				a {
+					color: $silk;
+					text-decoration: none;
+					font-size: 14px;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				.package-downloads {
+					display: flex;
+					font-weight: 600;
+					gap: 0.5rem;
+					font-size: 14px;
+					color: $honey;
+					.downloads {
+						display: flex;
+						align-items: center;
+					}
+				}
+			}
+		}
+	}
+}

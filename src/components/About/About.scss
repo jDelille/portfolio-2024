@@ -1,0 +1,113 @@
+@import '../../styles/breakpoints';
+@import '../../styles/variables';
+
+.about {
+	width: 648px;
+	margin-right: auto;
+	display: flex;
+	margin-top: 45px;
+	flex-direction: column;
+	gap: 0.5rem;
+	position: relative;
+	height: fit-content;
+	transition: all 200ms ease-in-out;
+	margin-top: 10rem;
+	margin-bottom: 10rem;
+	padding-top: 45px;
+	h1 {
+		margin-bottom: 0.5rem;
+	}
+	p {
+		color: #8c9495;
+	}
+	@include breakpoint(md) {
+		min-width: 536px;
+		max-width: 536px;
+		padding: 16px;
+	}
+	@include breakpoint(sm) {
+		max-width: 100%;
+		min-width: 100%;
+		margin: unset;
+		margin-top: 6rem;
+		padding: 0;
+	}
+	.about-me {
+		line-height: $lineHeightLG;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		width: 100%;
+		@include breakpoint(sm) {
+			font-size: 16px;
+			width: 100%;
+			line-height: $lineHeightSM;
+		}
+		span {
+			color: $honey;
+		}
+		.resume {
+			display: flex;
+			align-items: center;
+			padding: 0;
+			gap: 0.5rem;
+			cursor: pointer;
+			&:hover {
+				text-decoration: underline;
+				text-decoration-color: $honey;
+			}
+			.resume-icon {
+				max-height: 20px;
+				display: flex;
+				path {
+					&:nth-child(1) {
+						fill: $honey;
+					}
+				}
+			}
+		}
+	}
+	.skills-container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		margin-top: 3rem;
+		gap: 1rem;
+
+		border-radius: 8px;
+		.skills {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			height: 105px;
+			gap: 1rem;
+		}
+	}
+
+	.experience-container {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		height: fit-content;
+		gap: 1rem;
+		margin-top: 3rem;
+		.experience {
+			line-height: $lineHeightLG;
+			@include breakpoint(sm) {
+				font-size: 16px;
+				width: 100%;
+				line-height: $lineHeightSM;
+			}
+			h3 {
+				margin-bottom: 0.5rem;
+				@include breakpoint(sm) {
+					font-size: 18px;
+					margin-bottom: 1rem;
+				}
+				span {
+					color: $honey;
+				}
+			}
+		}
+	}
+}

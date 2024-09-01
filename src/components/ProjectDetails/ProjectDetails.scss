@@ -1,0 +1,146 @@
+@import '../../styles/variables';
+@import '../../styles/breakpoints';
+
+.project-details {
+	background-color: $silk;
+	width: 100vw;
+	height: fit-content;
+	color: $lead;
+	padding: 5rem 0rem;
+	display: flex;
+	gap: 2rem;
+	position: relative;
+	z-index: 2;
+	margin: 0 auto;
+	width: 100vw;
+	@include breakpoint(md) {
+		padding: 2rem 0;
+	}
+	@include breakpoint(sm) {
+		padding: 2rem 0;
+		margin: unset;
+	}
+	.detail-wrapper {
+		width: 1400px;
+		display: flex;
+		gap: 1rem;
+		padding: 0 2rem;
+		margin: 0 auto;
+
+		@include breakpoint(md) {
+			max-width: 1100px;
+			padding: 2rem;
+			justify-content: center;
+			align-items: center;
+		}
+		@include breakpoint(sm) {
+			max-width: 100%;
+			padding: unset;
+			margin: unset;
+			flex-direction: column;
+		}
+	}
+	.text {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		width: 70%;
+		@include breakpoint(md) {
+			// padding-top: 4rem;
+			width: 90%;
+			height: 100%;
+		}
+		@include breakpoint(sm) {
+			width: 100%;
+			padding: 0 1rem;
+		}
+	}
+	.purpose,
+	.build {
+		margin: 0 auto;
+
+		@include breakpoint(sm) {
+			padding: 2rem 0;
+			margin: unset;
+		}
+
+		h2 {
+			font-size: 2rem;
+			font-weight: 800;
+			margin-bottom: 1rem;
+		}
+		p {
+			line-height: $lineHeightSM;
+			width: 90%;
+			font-size: 16px;
+			@include breakpoint(md) {
+				width: 90%;
+			}
+			@include breakpoint(sm) {
+				width: 100%;
+			}
+		}
+	}
+	.site-images {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		width: 100%;
+		align-items: center;
+		@include breakpoint(md) {
+			padding-top: 4rem;
+			width: 100%;
+		}
+		@include breakpoint(sm) {
+			width: 100%;
+			padding-top: 1rem;
+		}
+		img {
+			max-width: 100%;
+
+			@include breakpoint(md) {
+				max-width: 100%;
+			}
+			@include breakpoint(sm) {
+				width: 98%;
+				padding: 0 1rem;
+			}
+			transition: all 200ms ease-in-out;
+
+			&:hover {
+				transform: scale(1.1);
+				transition: all 200ms ease-in-out;
+				@include breakpoint(sm) {
+					transform: none;
+				}
+			}
+		}
+	}
+	.showcase {
+		align-items: center;
+		@include breakpoint(md) {
+			// padding-top: 4rem;
+			padding: 0;
+			width: 100%;
+		}
+		@include breakpoint(sm) {
+			// padding-top: 4rem;
+			padding: 0;
+			width: 100%;
+		}
+		.select-wrapper {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			gap: 1rem;
+
+			.container {
+				min-height: 50px;
+				// border: 1px solid $gray;
+				background-color: white;
+			}
+		}
+	}
+}

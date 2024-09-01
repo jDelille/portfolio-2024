@@ -1,0 +1,124 @@
+@import '../../styles/breakpoints';
+@import '../../styles/variables';
+
+.home {
+	width: 100%;
+	max-width: 496px;
+	min-width: 496px;
+	height: 90vh;
+	position: relative;
+	padding: 80px 45px;
+	max-height: 1200px;
+	@include breakpoint(md) {
+		padding: 16px;
+		max-width: 100%;
+		min-width: 100%;
+	}
+	@include breakpoint(sm) {
+		max-width: 100%;
+		height: fit-content;
+		// padding: 0;
+	}
+
+	h1 {
+		font-size: 56px;
+		font-weight: 800;
+		letter-spacing: 2px;
+		@include breakpoint(md) {
+			font-size: 46px;
+		}
+		@include breakpoint(sm) {
+			font-size: 38px;
+		}
+	}
+
+	h2 {
+		font-size: 32px;
+		margin-top: 0.75rem;
+		@include breakpoint(sm) {
+			font-size: 22px;
+		}
+	}
+
+	.bio {
+		margin-top: 2rem;
+		color: $gray;
+		line-height: $lineHeightLG;
+		@include breakpoint(lg) {
+			max-width: 496px;
+			min-width: 496px;
+		}
+		@include breakpoint(md) {
+			max-width: 400px;
+		}
+		@include breakpoint(sm) {
+			min-width: 100%;
+			line-height: $lineHeightSM;
+		}
+	}
+
+	.extra-content {
+		margin-top: 2rem;
+		display: flex;
+		align-items: center;
+		position: absolute;
+		bottom: 2rem;
+		padding-top: 2rem;
+		@include breakpoint(sm) {
+			position: relative;
+			margin-top: 4rem;
+		}
+		img {
+			max-width: 45px;
+			border-radius: 50%;
+			margin-right: 2rem;
+			@include breakpoint(sm) {
+				margin-right: 10px;
+			}
+		}
+		.linkedin,
+		.github {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			margin-right: 2rem;
+			cursor: pointer;
+			@include breakpoint(sm) {
+				gap: 7px;
+				margin: 15px;
+			}
+			&:hover {
+				color: $honey;
+				svg {
+					color: $honey;
+				}
+
+				.github-icon {
+					fill: $honey;
+				}
+				.linkedin-icon {
+					path {
+						&:nth-child(1) {
+							fill: $honey;
+						}
+					}
+				}
+			}
+			p {
+				font-size: 14px;
+			}
+			svg {
+				width: 12px;
+				color: white;
+			}
+			.github-icon {
+				fill: white;
+				width: 16px;
+			}
+
+			.linkedin-icon {
+				width: 17px;
+			}
+		}
+	}
+}
